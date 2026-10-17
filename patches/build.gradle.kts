@@ -1,4 +1,4 @@
-group = "com.toyvo.revanced"
+group = "dev.toyvo.revanced"
 
 patches {
     about {
