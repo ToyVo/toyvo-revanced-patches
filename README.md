@@ -17,7 +17,7 @@
          <img height="24px" src="assets/revanced-logo/revanced-logo.svg" />
      </picture>
    </a>&nbsp;&nbsp;&nbsp;
-   <a href="https://github.com/ReVanced">
+   <a href="https://github.com/ToyVo">
        <picture>
            <source height="24px" media="(prefers-color-scheme: dark)" srcset="https://i.ibb.co/dMMmCrW/Git-Hub-Mark.png" />
            <img height="24px" src="https://i.ibb.co/9wV3HGF/Git-Hub-Mark-Light.png" />
@@ -58,79 +58,53 @@
    Continuing the legacy of Vanced
 </p>
 
-# 👋🧩 ReVanced Patches template
+# 🧩 ToyVo Patches
 
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ReVanced/revanced-patches-template/release.yml)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ToyVo/toyvo-revanced-patches/release.yml)
 ![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)
 
-Template repository for ReVanced Patches.
+ReVanced patches by ToyVo. Built from the [ReVanced Patches template](https://github.com/ReVanced/revanced-patches-template).
 
 ## ❓ About
 
-This is a template to create a new ReVanced Patches repository.  
-The repository can have multiple patches, and patches from other repositories can be used together.
+This repository contains custom ReVanced patches maintained by [ToyVo](https://github.com/ToyVo).
 
-For an example repository, see [ReVanced Patches](https://github.com/revanced/revanced-patches).
+## 📦 Patches
 
-## 🚀 Get started
+- `Example Patch` – Example patch to start with (`com.example.app` 1.0.0)
 
-To start using this template, follow these steps:
+> Update this list as you add real patches.
 
-1. [Create a new repository using this template](https://github.com/new?template_name=revanced-patches-template&template_owner=ReVanced)
-2. Set up the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the [group of the project](patches/build.gradle.kts#L1),
-and the [About](patches/build.gradle.kts#L5-L11))
-3. Update dependencies in the [libs.versions.toml](gradle/libs.versions.toml) file
-4. [Create a pass-phrased GPG master key and subkey](https://mikeross.xyz/create-gpg-key-pair-with-subkeys/)
-   1. Add the private key as a secret named [GPG_PRIVATE_KEY](.github/workflows/release.yml#L52) to your repository
-   2. Add the passphrase as a secret named [GPG_PASSPHRASE](.github/workflows/release.yml#L53) to your repository
-   3. Add the fingerprint of the GPG subkey as a secret named [GPG_FINGERPRINT](.github/workflows/release.yml#L54) to your repository
-5. Set up the [README.md](README.md) file[^1] (e.g, title, description, license, summary of the patches
-that are included in the repository), the [issue templates](.github/ISSUE_TEMPLATE)[^2]  and the [contribution guidelines](CONTRIBUTING.md)[^3]
+## 🚀 Usage
 
-🎉 You are now ready to start creating patches!
+To use these patches together with other ReVanced patches, add this repository as a patch bundle source in ReVanced Manager / CLI.
 
-[^1]: [Example README.md file](https://github.com/ReVanced/revanced-patches/blob/main/README.md)
-[^2]: [Example issue templates](https://github.com/ReVanced/revanced-patches/tree/main/.github/ISSUE_TEMPLATE)
-[^3]: [Example contribution guidelines](https://github.com/ReVanced/revanced-patches/blob/main/CONTRIBUTING.md)
+Development happens on the `dev` branch:
 
-## 🔘 Optional steps
+- Feature branches are squashed and merged into `dev`
+- `dev` is merged into `main` for releases
+- Releases are automated via [semantic-release](https://github.com/semantic-release/semantic-release) using the [release.yml](.github/workflows/release.yml) workflow
 
-You can also add the following things to the repository:
+## 📙 Contributing
 
-- API documentation, if you want to publish your patches as a library
-
-## 🧑‍💻 Usage
-
-To develop and release ReVanced Patches using this template, some things need to be considered:
-
-- Development starts in feature branches. Once a feature branch is ready, it is squashed and merged into the `dev` branch
-- The `dev` branch is merged into the `main` branch once it is ready for release
-- Semantic versioning is used to version ReVanced Patches. ReVanced Patches have a public API for other patches to use
-- Semantic commit messages are used for commits
-- Commits on the `dev` branch and `main` branch are automatically released
-via the [release.yml](.github/workflows/release.yml) workflow, which is also responsible for generating the changelog
-and updating the version of ReVanced Patches. It is triggered by pushing to the `dev` or `main` branch.
-The workflow uses the `publish` task to publish the release of ReVanced Patches
-- The `buildAndroid` task is used to build ReVanced Patches so that it can be used on Android.
-The `publish` task depends on the `buildAndroid` task, so it will be run automatically when publishing a release.
-
-## 📚 Everything else
-
-### 📙 Contributing
-
-Thank you for considering contributing to ReVanced Patches template.  
+Thank you for considering contributing to ToyVo Patches.
 You can find the contribution guidelines [here](CONTRIBUTING.md).
 
-### 🛠️ Building
+## 🛠️ Building
 
-To build ReVanced Patches template,
-you can follow the [ReVanced documentation](https://github.com/ReVanced/revanced-documentation).
+To build ToyVo Patches, follow the [ReVanced documentation](https://github.com/ReVanced/revanced-documentation).
+
+```sh
+./gradlew build
+# Android archive for on-device use:
+./gradlew buildAndroid
+```
 
 ## 📜 Licence
 
-ReVanced Patches template is licensed under the GPLv3 licence.
+ToyVo Patches is licensed under the GPLv3 licence.
 Please see the [license file](LICENSE) for more information.
 [tl;dr](https://www.tldrlegal.com/license/gnu-general-public-license-v3-gpl-3) you may copy, distribute
-and modify ReVanced Patches template as long as you track changes/dates in source files.
-Any modifications to ReVanced Patches template must also be made available under the GPL,
+and modify ToyVo Patches as long as you track changes/dates in source files.
+Any modifications to ToyVo Patches must also be made available under the GPL,
 along with build & install instructions.

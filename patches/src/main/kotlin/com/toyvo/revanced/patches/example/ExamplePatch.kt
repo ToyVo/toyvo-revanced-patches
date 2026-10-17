@@ -1,4 +1,4 @@
-package app.revanced.patches.example
+package com.toyvo.revanced.patches.example
 
 import app.revanced.patcher.patch.bytecodePatch
 

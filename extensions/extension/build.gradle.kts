@@ -3,5 +3,5 @@ extension {
 }
 
 android {
-    namespace = "app.revanced.extension"
+    namespace = "com.toyvo.revanced.extension"
 }
